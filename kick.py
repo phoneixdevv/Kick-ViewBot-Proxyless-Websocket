@@ -10,7 +10,7 @@ import os
 from threading import Thread, Semaphore
 import tls_client
 
-CLIENT_TOKEN = "e1393935a959b4020a4491574f6490129f678acdaa92760471263db43487f823"
+CLIENT_TOKEN = "e1393935a959b4020a4491574f6490129f678acdaa92760471263db43487f823" # use frida or any debugger for get the client_token variable, u may need to change for better performance.
 
 channel = ""
 channel_id = None
@@ -208,7 +208,7 @@ def show_stats():
             
             lines = []
             
-            lines.append(f"{Colors.CYAN}🔥 kick viewer boost - phoneix  🔥{Colors.RESET}")
+            lines.append(f"{Colors.CYAN}kick viewer boost - phoneix {Colors.RESET}")
             lines.append(f"{Colors.CYAN}{'='*60}{Colors.RESET}")
             
             progress_color = Colors.GREEN if progress_percent > 75 else Colors.YELLOW if progress_percent > 40 else Colors.RED
@@ -374,7 +374,7 @@ def connection_manager():
         token_thread = Thread(target=prefetch_tokens, daemon=True)
         token_thread.start()
     
-    print(f"{Colors.YELLOW}🔥 Pre-warming token cache...{Colors.RESET}")
+    print(f"{Colors.YELLOW} Pre-warming token cache...{Colors.RESET}")
     
     def fetch_tokens_batch():
         for _ in range(10):
@@ -392,7 +392,7 @@ def connection_manager():
     for t in warm_threads:
         t.join(timeout=10)
     
-    print(f"{Colors.GREEN}✅ Token cache ready: {len(token_cache)} tokens{Colors.RESET}")
+    print(f"{Colors.GREEN} Token cache ready: {len(token_cache)} tokens{Colors.RESET}")
     
     last_burst_time = time.time()
     burst_count = 0
@@ -485,7 +485,7 @@ def run(thread_count, channel_name):
     manager_thread.start()
     
     initial_batch = min(max_threads, 100)
-    print(f"{Colors.YELLOW}🔥 Launching {initial_batch} initial connections...{Colors.RESET}")
+    print(f"{Colors.YELLOW} Launching {initial_batch} initial connections...{Colors.RESET}")
     
     for i in range(initial_batch):
         if stop:
@@ -506,7 +506,7 @@ def run(thread_count, channel_name):
 if __name__ == "__main__":
     try:
         os.system('cls' if os.name == 'nt' else 'clear')
-        print(f"{Colors.CYAN}🔥 kick view boost - phoneix 🔥{Colors.RESET}")
+        print(f"{Colors.CYAN} kick view boost - phoneix {Colors.RESET}")
         print(f"{Colors.CYAN}{'='*65}{Colors.RESET}")
         print(f"{Colors.YELLOW}Private tool for kick web.{Colors.RESET}")
         print()
